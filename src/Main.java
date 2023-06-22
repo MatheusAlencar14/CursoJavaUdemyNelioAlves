@@ -22,28 +22,23 @@ public class Main {
 
         double totalValue = product.totalValueInStock();
 
-        System.out.printf("Os dados do produto são: \nNome: " + product.name + "\nPreço: "
-                + product.price + "\nQuantidade em estoque: " + product.quantity
-                + "\nValor total do estoque: %.3f%n", totalValue);
+        System.out.println("Dados do produto: " + product);
+
 
         System.out.println("\nIndique a quantidade adicional do produto: ");
         int quantityAdd = scan.nextInt();
         product.addProducts(quantityAdd);
         totalValue = product.totalValueInStock();
 
-        System.out.printf("\nOs dados do produto são: \nNome: " + product.name + "\nPreço: "
-                + product.price + "\nQuantidade em estoque: " + product.quantity
-                + "\nValor total do estoque: %.3f%n", totalValue);
+        System.out.println("Dados do produto: " + product);
 
         System.out.println("\nIndique a quantidade de produtos removidos: ");
         int quantityRemove = scan.nextInt();
         product.removeProducts(quantityRemove);
         totalValue = product.totalValueInStock();
 
-        System.out.printf("\nOs dados do produto são: \nNome: " + product.name + "\nPreço: "
-                + product.price + "\nQuantidade em estoque: " + product.quantity
-                + "\nValor total do estoque: %.3f%n", totalValue);
-        
+        System.out.println("Dados do produto: " + product);
+
         scan.close();
         }
     }
