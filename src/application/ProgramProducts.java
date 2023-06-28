@@ -8,16 +8,17 @@ import java.util.Scanner;
 public class ProgramProducts {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
-        Products product = new Products();
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Digite os dados do Produto: ");
         System.out.println("Nome: ");
-        product.name = scan.nextLine();
+        String name = scan.nextLine();
         System.out.println("Preço: ");
-        product.price = scan.nextDouble();
+        double price = scan.nextDouble();
         System.out.println("Quantidade em Estoque: ");
-        product.quantity = scan.nextInt();
+        int quantity = scan.nextInt();
+
+        Products product = new Products(name, price, quantity);
 
         double totalValue = product.totalValueInStock();
 
