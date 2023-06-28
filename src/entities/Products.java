@@ -5,15 +5,38 @@ public class Products {
     public double price;
     public int quantity;
 
-    public Products (String name, double price, int quantity) {
+    public Products() {
+    }
+
+    public Products(String name, double price, int quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
     }
 
-    public Products (String name, double price) {
+    public Products(String name, double price) {
         this.name = name;
         this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
     }
 
     public double totalValueInStock() {
@@ -31,6 +54,7 @@ public class Products {
 
     public String toString () {
         return name + ", R$ " + String.format("%.3f", price) + ", " + quantity
-                + " unidades, Total em estoque: R$ " + String.format("%.3f", totalValueInStock()) ;
+                + " unidades, Total em estoque: R$ "
+                + String.format("%.3f", totalValueInStock()) ;
     }
 }
