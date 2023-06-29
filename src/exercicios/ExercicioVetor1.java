@@ -16,8 +16,7 @@ public class ExercicioVetor1 {
         for(int i = 0; i < vetor.length; i++) {
             scan.nextLine();
             System.out.println("\nDigite um número: ");
-            int numero = scan.nextInt();
-            vetor[i] = numero;
+            vetor[i]  = scan.nextInt();
         }
 
         System.out.println("Números negativos: ");
