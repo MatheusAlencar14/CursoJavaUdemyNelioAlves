@@ -10,27 +10,36 @@ public class ProgramContaBancaria {
         Locale.setDefault(Locale.US);
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Digite o nome do titular: ");
-        String nome = scan.nextLine();
         System.out.println("Digite o número da Conta: ");
         int numeroConta = scan.nextInt();
-        System.out.println("Digite o valor inicial de depósito: ");
-        double depositoInicial = scan.nextDouble();
+        System.out.println("Digite o nome do titular: ");
+        scan.nextLine();
+        String nome = scan.nextLine();
+        System.out.println("Deseja realizar um depósito inicial? S/N");
+        char inicial;
+        inicial = scan.next().charAt(0);
+        ContaBancaria conta;
+        if (inicial == 'S') {
+            System.out.println("Digite o valor inicial de depósito: ");
+            double depositoInicial = scan.nextDouble();
+            conta = new ContaBancaria(numeroConta, nome, depositoInicial);
+        } else {
+            conta = new ContaBancaria(numeroConta, nome);
+        }
 
-        ContaBancaria conta = new ContaBancaria(numeroConta, nome, depositoInicial);
-
-        System.out.printf("Dados da conta: \n" + conta);
+        System.out.println(conta);
 
         System.out.println("\nDigite o valor do depósito: ");
         double deposito = scan.nextDouble();
         conta.depositar(deposito);
 
-        System.out.println("\nDados da conta: " + conta);
+        System.out.println(conta);
 
         System.out.println("\nDigite o valor de saque: ");
         double saque = scan.nextDouble();
         conta.sacar(saque);
 
         System.out.println("\nDados da conta: \n" + conta);
+        scan.close();
     }
 }

@@ -7,15 +7,15 @@ public class ContaBancaria {
     public ContaBancaria() {
     }
 
-    public ContaBancaria (int numeroConta, String nome, double depositoInicial) {
-        this.numeroConta = numeroConta;
-        this.nome = nome;
-        this.saldo = depositoInicial;
-    }
-
     public ContaBancaria(int numeroConta, String nome) {
         this.numeroConta = numeroConta;
         this.nome = nome;
+    }
+
+    public ContaBancaria (int numeroConta, String nome, double depositoInicial) {
+        this.numeroConta = numeroConta;
+        this.nome = nome;
+        depositar(depositoInicial);
     }
 
     public int getNumeroConta() {
@@ -39,7 +39,7 @@ public class ContaBancaria {
     }
 
     public void sacar(double saque) {
-        this.saldo = saldo - (saque + 5);
+        this.saldo -= saque + 5;
     }
 
     @Override
