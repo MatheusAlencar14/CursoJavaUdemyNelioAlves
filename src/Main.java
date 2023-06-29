@@ -7,32 +7,27 @@ import java.util.Scanner;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-
+        //Ler um número positivo N e depois N números inteiros, armazenando em um vetor.
+        //Em seguida, mostrar na telas os números negativos lidos
         Locale.setDefault(Locale.US);
         Scanner scan = new Scanner(System.in);
         System.out.println("Digite um número: ");
         int n = scan.nextInt();
-        Products[] vetor = new Products[n];
+        int[] vetor = new int[n];
 
         for(int i = 0; i < vetor.length; i++) {
             scan.nextLine();
-            System.out.println("\nDigite o nome do produto: ");
-            String name = scan.nextLine();
-            System.out.println("Digite o preço do produto: ");
-            double price = scan.nextDouble();
-            vetor[i] = new Products(name, price);
+            System.out.println("\nDigite um número: ");
+            int numero = scan.nextInt();
+            vetor[i] = numero;
         }
 
-        double soma = 0;
-
+        System.out.println("Números negativos: ");
         for(int i = 0; i < vetor.length; i++) {
-            soma += vetor[i].getPrice();
+            if(vetor[i] < 0) {
+                System.out.println(vetor[i]);
+            }
         }
-
-        double media = soma / n;
-
-        System.out.printf("\nA média do preço dos produtos é: %.2f%n", media);
-
         scan.close();
         }
     }
