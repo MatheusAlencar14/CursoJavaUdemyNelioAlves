@@ -37,6 +37,6 @@ public class ExercicioFuncionario {
 
     @Override
     public String toString() {
-        return id + ", " + nome + ", R$ " + salario;
+        return id + ", " + nome + ", R$ " + String.format("%.2f%n", salario);
     }
 }

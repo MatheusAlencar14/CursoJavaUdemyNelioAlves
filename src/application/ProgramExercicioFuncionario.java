@@ -33,7 +33,7 @@ public class ProgramExercicioFuncionario {
         System.out.println();
         System.out.println("Lista de funcionários: ");
         for (ExercicioFuncionario x : func) {
-            System.out.println(x);
+            System.out.print(x);
         }
 
         System.out.println();
@@ -52,7 +52,7 @@ public class ProgramExercicioFuncionario {
         System.out.println();
         System.out.println("Lista de funcionários: ");
         for (ExercicioFuncionario x : func) {
-            System.out.println(x);
+            System.out.print(x);
         }
         scan.close();
     }
