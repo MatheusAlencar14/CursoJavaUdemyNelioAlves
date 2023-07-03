@@ -5,6 +5,10 @@ import java.util.Scanner;
 public class ExercicioMatriz1 {
     public static void main(String[] args) {
 
+        /*Um programa que faça uma matriz a partir dos números n e m. Em seguida, ler um número x
+        pertencente à matriz e mostrar, para cada ocorrência de x, o valor dos números acima,
+        à esquerda, à direita e abaixo.*/
+
         Scanner scan = new Scanner(System.in);
 
         int m, n, x;
