@@ -51,5 +51,22 @@ public class ProgramDataHora {
         //Imprime a hora global (Instant), convertendo para o fuso horário do sistema do usuário
         DateTimeFormatter dtf03 = DateTimeFormatter.ofPattern("dd/MM/yyy HH:mm").withZone(ZoneId.systemDefault());
         System.out.println("Data d06: " + dtf03.format(d06));
+        System.out.println();
+        System.out.println();
+
+        //Convertendo data global para local
+        LocalDate l1 = LocalDate.ofInstant(d06, ZoneId.systemDefault());
+        LocalDateTime l2 = LocalDateTime.ofInstant(d06, ZoneId.of("Portugal"));
+
+        System.out.println("L1: " + l1);
+        System.out.println("L2: " + l2);
+        System.out.println();
+
+        //Verificar valor específico na Data ou Hora
+        System.out.println("Dia d05: " + d05.getDayOfMonth());
+        System.out.println("Mês d05: " + d05.getMonthValue());
+        System.out.println("Ano d05: " + d05.getYear());
+        System.out.println("Hora d05: " + d05.getHour());
+        System.out.println("Minutos d05: " + d05.getMinute());
     }
 }
