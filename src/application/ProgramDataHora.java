@@ -4,13 +4,14 @@ import javax.swing.text.DateFormatter;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
 
 public class ProgramDataHora {
     public static void main(String[] args) {
-        
+
         DateTimeFormatter dtf01 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter dtf02 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
@@ -19,7 +20,7 @@ public class ProgramDataHora {
         Instant d03 = Instant.now();
 
         LocalDate d04 = LocalDate.parse("2023-07-03");
-        LocalDateTime d05 = LocalDateTime.parse("2023-07-03T11:01:08");
+        LocalDateTime d05 = LocalDateTime.parse("2023-07-03T11:01");
         Instant d06 = Instant.parse("2023-07-03T11:01:08Z");
         Instant d07 = Instant.parse("2023-07-03T11:01:08-03:00");
 
@@ -40,5 +41,15 @@ public class ProgramDataHora {
         System.out.println("Data d09: " + d09);
         System.out.println("Data d10: " + d10);
         System.out.println("Data d11: " + d11);
+        System.out.println();
+        System.out.println();
+
+        //Imprimir Data e Hora em formato customizado
+        System.out.println("Data d04: " + d04.format(dtf01));
+        System.out.println("Data d05: " + dtf02.format(d05));
+
+        //Imprime a hora global (Instant), convertendo para o fuso horário do sistema do usuário
+        DateTimeFormatter dtf03 = DateTimeFormatter.ofPattern("dd/MM/yyy HH:mm").withZone(ZoneId.systemDefault());
+        System.out.println("Data d06: " + dtf03.format(d06));
     }
 }
